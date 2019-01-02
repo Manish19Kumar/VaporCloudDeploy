@@ -97,4 +97,9 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     databases.add(database: database, as: .psql)
     // 6. Register DatabasesConfig with the services.
     services.register(databases)
+    
+    var migrations = MigrationConfig()
+    // 4
+    migrations.add(model: Acronym.self, database: .psql)
+    services.register(migrations)
 }
