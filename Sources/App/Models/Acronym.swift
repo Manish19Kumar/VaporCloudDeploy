@@ -1,6 +1,8 @@
 
 import Vapor
-import FluentSQLite
+// import FluentMySQL
+// import FluentSQLite
+import FluentPostgreSQL
 final class Acronym: Codable {
     var id: Int?
     var short: String
@@ -19,10 +21,13 @@ final class Acronym: Codable {
 //    // 3. Tell Fluent the key path of the model’s ID property.
 //    public static var idKey: IDKey = \Acronym.id
 //}
-extension Acronym: SQLiteModel {
+/*extension Acronym: SQLiteModel {
     
 }
+ */
 
+//extension Acronym: MySQLModel {}
+extension Acronym: PostgreSQLModel {}
 extension Acronym: Migration {}
 
 extension Acronym: Content {}
